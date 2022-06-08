@@ -1,0 +1,140 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body{
+	background: #ddd;  /*1D202B*/
+	border: 2px dotted black;
+	color: #fff;
+	font-family: 'Roboto', sans-serif;
+	/*1ra forma centrar*/
+	/*display: grid;
+	justify-content: center;
+	align-content: center;*/
+
+	/*2da forma centrar*/
+	/*display: flex;
+	align-items: center;
+	justify-content: center;*/
+
+	/*3ra forma centrar*/
+	display: flex;
+	min-height: 100vh;
+}
+.container{
+	display: grid;
+	grid-template-columns: 3fr 1fr;
+	border: 3px dotted black;
+	height: 550px;
+	/*3 forma centrar*/
+	margin: auto auto;
+	width: 90%;
+	max-width: 1200px;
+}
+.container__section{
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 5px;
+	
+}
+.container__section-article	{
+	display: flex;
+	flex: 1;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	border-radius: 15px;
+	height: 100%;
+}
+.aside{
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: -235px center;
+}
+.text{
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100%;
+}
+h2, p{
+	text-align: center;
+	color: #fff9;
+}
+.container__section-article:hover > .text{
+	background: #0007;
+	transition: background 1s ease;
+}
+.aside__text{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	text-align: center;
+	height: 100%;	
+}
+ul{
+	list-style-type: none;
+}
+a{
+	text-decoration: none;
+	font-size: 17px;
+	color: #07f;
+}
+li{
+	padding: 20px 0;
+}
+.aside__h1{
+	color: #a00;
+}
+.aside__button{
+	margin: 0 7px;
+	padding: 15px 0;
+	border-radius: 30px;
+	background: #a009;
+	color: #eee;
+}
+.aside:hover > .aside__text{
+	background: #0007;
+	transition: background 1s ease;
+}
+.aside:hover > .aside__text:hover > ul:hover > li:hover > a{
+	color: white;
+	transition: color 1s ease-out;
+}
+
+
+@media screen and (max-width: 900px){
+	.container__section{
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+@media screen and (max-width: 700px){
+	.container{
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(auto-fill, minmax(1fr,1fr));	
+	}
+	.aside{
+		background-position: center center;
+	}
+
+}
+@media screen and (max-width: 600px){
+	.container{
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: repeat(auto-fill, minmax(1fr,1fr));
+	}
+	.container__section{
+		display: flex;
+		flex-direction: column;
+		min-height:  1000px;
+	}
+	
+	
+	.aside__text{
+
+	}
+}
